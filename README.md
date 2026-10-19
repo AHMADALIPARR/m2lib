@@ -1,22 +1,28 @@
+<!-- SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 -->
+<!-- Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. -->
+<!-- Authored by Ahmad Ali Parr. -->
+<!-- Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. -->
+
 # M2Lib — Modula-2 Library
 
 [![Modula-2](https://img.shields.io/badge/language-Modula--2-blue)](https://en.wikipedia.org/wiki/Modula-2)
 [![Modules](https://img.shields.io/badge/modules-30%20paired-brightgreen)](MODULES.md)
-[![Source lines](https://img.shields.io/badge/source%20lines-2588-brightgreen)](MODULES.md)
+[![Source lines](https://img.shields.io/badge/source%20lines-2888-brightgreen)](MODULES.md)
 [![Demos](https://img.shields.io/badge/demos-14-blue)](examples/)
 [![Edge cases](https://img.shields.io/badge/edge%20cases-33-blue)](docs/edge-cases.md)
 [![Compiler](https://img.shields.io/badge/gm2-BLOCKED-red)](docs/architecture.md)
-[![License](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
+[![License](https://img.shields.io/badge/license-Sovereign--Leviathan--SL--AGPL3--001-blue.svg)](LICENSE)
 
 Paired Modula-2 definition (`.def`) and implementation (`.mod`) modules organized by domain.
 Source is authored for a classic Modula-2 module model with GNU Modula-2 runtime
 assumptions where stated. Exact compiler compatibility is not claimed until compiled
 with a pinned toolchain.
 
-> License note: the repo currently carries the supplied MIT `LICENSE`.
-> A re-license to a strict copyleft custom commercial license was requested
-> and is **on hold** pending the exact license text (see below). Nothing has
-> been re-licensed yet.
+> License: SNAPKITTY OPAQUE SOURCE LICENSE v1.0
+> (`LicenseRef-Sovereign-Leviathan-SL-AGPL3-001`). See `LICENSE`.
+> Every main-tree source and doc file carries the Opaque header.
+> The `archive/` tree keeps its supplied MIT `LICENSE` as a historical
+> artifact, and `M2LIB_SOURCE_DUMP.txt` is the pre-relicense snapshot.
 
 ## Layout
 
@@ -116,7 +122,7 @@ Source files alone are not evidence of compiler success.
 | Check | Result |
 |---|---|
 | Pairing | 30 paired; 0 definition-only; 0 implementation-only |
-| Source lines | 2,588 |
+| Source lines | 2,888 (2,588 pre-header + 300 header lines) |
 | Edge-case checks | 33, traced from source, not executed |
 | `gm2` compile | BLOCKED — compiler not installed |
 | Archive pairing | 34 paired (first generation, `archive/`) |

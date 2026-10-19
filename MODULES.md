@@ -1,3 +1,8 @@
+<!-- SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 -->
+<!-- Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. -->
+<!-- Authored by Ahmad Ali Parr. -->
+<!-- Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. -->
+
 # M2Lib module status ledger
 
 Source is authored; compiler/test states are not claimed without execution.
@@ -35,4 +40,4 @@ Source is authored; compiler/test states are not claimed without execution.
 | M2Vector | yes | yes | IMPLEMENTED / COMPILER BLOCKED |
 | M2Version | yes | yes | IMPLEMENTED / COMPILER BLOCKED |
 
-Totals: 30 modules, 60 source files, 2588 source lines.
+Totals: 30 modules, 60 source files, 2888 source lines (2588 pre-header + 300 header lines: 5 per file).

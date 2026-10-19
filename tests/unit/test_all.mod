@@ -1,1 +1,6 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
 MODULE test_all; FROM M2Limits IMPORT IsPowerOfTwo,NextPowerOfTwo; FROM M2Complex IMPORT Complex,Make,Multiply,MagnitudeSquared; FROM M2Time IMPORT Date,IsValidDate,DayOfYear; VAR d:Date;z:Complex;n:CARDINAL; BEGIN IF NOT IsPowerOfTwo(1024)THEN HALT(1)END;IF NextPowerOfTwo(9)#16 THEN HALT(2)END;z:=Multiply(Make(2.0,3.0),Make(2.0,-3.0));IF MagnitudeSquared(z)<99.0 THEN HALT(3)END;d.year:=2024;d.month:=12;d.day:=31;n:=DayOfYear(d);IF n#366 THEN HALT(4)END;IF NOT IsValidDate(d)THEN HALT(5)END END test_all.

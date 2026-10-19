@@ -1,3 +1,8 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
 (* Assistant-added demo. Written, not executed: gm2 was unavailable.
    Covers M2Endian only: M2Binary has same-named ReadBE32/WriteBE32, so it
    gets its own file (binary_stream_demo.mod) to avoid an import collision. *)

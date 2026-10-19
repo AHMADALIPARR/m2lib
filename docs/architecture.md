@@ -1,7 +1,12 @@
+<!-- SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 -->
+<!-- Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. -->
+<!-- Authored by Ahmad Ali Parr. -->
+<!-- Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. -->
+
 # M2Lib architecture — assistant-added
 
 Main tree = complete generation (2026-10-19): 30 modules, 60 paired `.def`/`.mod` files,
-2,588 source lines. Every module has exactly one definition and one implementation.
+2,888 source lines (2,588 pre-header + 300 header lines). Every module has exactly one definition and one implementation.
 No compile or run claim: `gm2` was unavailable in the generation environment and on this VM.
 
 ## Domain map
