@@ -98,11 +98,11 @@ pairing checks. So the two trees were kept separate:
   `build/logs/compiler.log`, `build/logs/source-check.log`.
 - Result: no `.txt`, `.zip`, or source-dump files remain in the repo.
 
-## Cherry-pick (2026-10-19, user-directed): archive code merged into the main tree
+## First-generation merge (2026-10-19, user-directed): archive code merged into the main tree
 
 The archive was not left as dead history: every archive file was compared
 against the main tree at procedure level, and what the main tree lacked was
-cherry-picked in. Main tree went from 30 modules / 60 files / 2,888 lines to
+merged in. Main tree went from 30 modules / 60 files / 2,888 lines to
 46 modules / 92 files / 5,453 lines (4,993 pre-header). Nothing in the main
 tree was removed or replaced; additions are additive only.
 
@@ -121,15 +121,14 @@ main tree: `M2Hex`, `M2Parse`, `M2Text` ← `M2Char`; `M2Rational` ← `M2Intege
   identifier. The unused import was removed; the body is otherwise verbatim.
 - **Known defect, ported verbatim:** `M2Graph` BFS/DFS — the `.def` declares a
   BOOLEAN result, the `.mod` implements them with no return. Do not call
-  BFS/DFS until the mismatch is fixed (`examples/cherry_pick_demo.mod`
-  exercises the rest of `M2Graph` and skips them).
+  BFS/DFS until the mismatch is fixed.
 - **Preserved divergences (ported verbatim, not harmonized):** `M2Char.IsSpace`
   also accepts 18 and 64, unlike `M2Chars.IsSpace`; `M2Text.Length` stops at
   `HIGH(s)` where `M2Strings.Length` stops at `HIGH(s)+1`;
   `M2Interpolation.Trapezoid`/`Bisect` work only on the fixed function
   x^3 - x - 2 (private `FunctionValue`).
 
-### Procedures cherry-picked into 13 overlapping modules (verbatim unless noted)
+### Procedures merged into 13 overlapping modules (verbatim unless noted)
 
 - `M2Binary`: full streaming API — `Writer`/`Reader` types + `InitWriter`,
   `InitReader`, `PutByte`, `PutU16BE`, `PutU32BE`, `PutBytes`, `GetByte`,

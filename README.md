@@ -8,7 +8,7 @@
 [![Modula-2](https://img.shields.io/badge/language-Modula--2-blue)](https://en.wikipedia.org/wiki/Modula-2)
 [![Modules](https://img.shields.io/badge/modules-46%20paired-brightgreen)](docs/MODULES.md)
 [![Source lines](https://img.shields.io/badge/source%20lines-5453-brightgreen)](docs/MODULES.md)
-[![Demos](https://img.shields.io/badge/demos-15-blue)](examples/)
+[![Demos](https://img.shields.io/badge/demos-14-blue)](examples/)
 [![Edge cases](https://img.shields.io/badge/edge%20cases-33-blue)](docs/edge-cases.md)
 [![Compiler](https://img.shields.io/badge/gm2-BLOCKED-red)](docs/architecture.md)
 [![License](https://img.shields.io/badge/license-Sovereign--Leviathan--SL--AGPL3--001-blue.svg)](LICENSE)
@@ -31,7 +31,7 @@ with a pinned toolchain.
 | Path | Contents |
 |---|---|
 | `src/` | 46 modules, one directory per domain |
-| `examples/` | 15 demos, written not executed |
+| `examples/` | 14 demos, written not executed |
 | `tests/unit/` | Modula-2 tests incl. 33 edge-case checks |
 | `tests/integration/` | Reserved for end-to-end `gm2` runs |
 | `benchmarks/` | Reserved; no numbers claimed |
@@ -115,7 +115,6 @@ All are written, not executed — `gm2` is unavailable, so no run claim is made.
 | `text_demo.mod` | M2Chars, M2Strings, M2UTF8 |
 | `bits_demo.mod` | M2BitSet, M2Heap, M2Random |
 | `security_demo.mod` | M2CRC32, M2SHA256 (fails closed) |
-| `cherry_pick_demo.mod` | The 16 cherry-picked modules: M2BST, M2Graph, M2KMP, M2Base64, M2Char, M2Hex, M2Parse, M2Text, M2Integer, M2Rational, M2Stats, M2Interpolation, M2CRC16, M2BitOps, M2Date, M2RingQueue |
 
 ## Status
 
@@ -137,8 +136,8 @@ SHA-256 fails closed rather than returning a fabricated digest until a portable
 
 This repo holds two divergent generations. The 2026-10-18 generation lives in
 `archive/`, and its code that the 2026-10-19 "complete" generation lacked was
-cherry-picked into the main tree (16 whole modules plus unique procedures in
+merged into the main tree from the first generation (16 whole modules plus unique procedures in
 13 overlapping modules) — see [docs/SOURCES.md](docs/SOURCES.md). Both trees
 carry the Opaque license and headers; source content is unchanged apart from
 headers, the archive's two `.txt` build records (now `.md`), its `LICENSE`
-swap, and the labeled cherry-pick adaptations documented in `SOURCES.md`.
+swap, and the labeled merge adaptations documented in `SOURCES.md`.

@@ -5,7 +5,7 @@
 
 # M2Lib architecture — assistant-added
 
-Main tree = complete generation (2026-10-19) plus cherry-picked code from the
+Main tree = complete generation (2026-10-19) plus first-generation code from the
 first generation (see `SOURCES.md`): 46 modules, 92 paired `.def`/`.mod` files,
 5,453 source lines (4,993 pre-header + 460 header lines). Every module has exactly one definition and one implementation.
 No compile or run claim: `gm2` was unavailable in the generation environment and on this VM.
@@ -132,14 +132,13 @@ Notes on the arrows (only the ones verified by reading the `.mod` files):
   more than one use qualified `IMPORT M2Stack, M2Queue, M2List` (see
   `tests/unit/test_edge_cases.mod`); `M2Chars` / `M2Strings` both export
   `ToUpper` / `ToLower` (see `examples/text_demo.mod`).
-- Cherry-picked modules add more shared names: `M2BST` / `M2Graph` / `M2RingQueue`
+- First-generation modules add more shared names: `M2BST` / `M2Graph` / `M2RingQueue`
   all export `Create` / `Destroy`; `M2Base64` / `M2Hex` both export `Encode` / `Decode`;
-  `M2Text` / `M2KMP` both export `Find`. Clients use qualified `IMPORT` for these
-  (see `examples/cherry_pick_demo.mod`).
+  `M2Text` / `M2KMP` both export `Find`. Clients use qualified `IMPORT` for these.
 - `M2Graph` BFS/DFS are a known defect: the `.def` declares a BOOLEAN result,
   the `.mod` implements them with no return. They are ported verbatim from the
   first generation; do not call them until the mismatch is fixed.
-- `M2Char.IsSpace` differs from `M2Chars.IsSpace`: the cherry-picked version
+- `M2Char.IsSpace` differs from `M2Chars.IsSpace`: the first-generation version
   also accepts 18 (12X) and 64 (40X). `M2Text.Length` stops at `HIGH(s)` where
   `M2Strings.Length` stops at `HIGH(s)+1`, so a NUL-free full array reads one
   short. Both are ported verbatim; the differences are intentional to preserve.
@@ -163,5 +162,5 @@ Notes on the arrows (only the ones verified by reading the `.mod` files):
 | `tools/` | `check_source.py` (supplied), `check_edge_cases.py` (assistant-added) |
 | `build/` | `build.sh` (supplied; exits 2 with BLOCKED when `gm2` is absent) |
 | `docs/` | This file, `edge-cases.md`, `MODULES.md`, `SOURCES.md` |
-| `archive/first-generation-2026-10-18/` | First generation, 34 modules / 68 files; cherry-picked into the main tree (see `SOURCES.md`) |
+| `archive/first-generation-2026-10-18/` | First generation, 34 modules / 68 files; merged into the main tree (see `SOURCES.md`) |
 | `docs/SOURCES.md` | Provenance: how the two generations were identified and kept separate |
