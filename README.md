@@ -359,6 +359,7 @@ All are written, not executed — `gm2` is unavailable, so no run claim is made.
 | `tests/unit/test_all.mod` (supplied) | 5 `HALT` checks: M2Limits, M2Complex, M2Time |
 | `tests/unit/test_core.mod` (supplied) | 7 `HALT` checks: M2Math, M2Strings, M2CRC32, M2Sort |
 | `tests/unit/test_edge_cases.mod` (assistant-added) | 33 `HALT` checks, one per row in `docs/edge-cases.md` |
+| `tests/unit/test_stack_invariants.mod` (assistant-added) | 26 `HALT` checks encoding the M2Stack invariants in `docs/invariants.md` |
 | `tests/integration/README.md` | Reserved for end-to-end `gm2` runs; no tests yet |
 
 ### `tools/` — checkers (Python tooling only, not library code)
@@ -376,6 +377,7 @@ All are written, not executed — `gm2` is unavailable, so no run claim is made.
 | `docs/edge-cases.md` | 33 edge cases, each traced from the corresponding `.mod` implementation, labelled traced-not-executed |
 | `docs/MODULES.md` | Per-module status ledger (46 modules, all IMPLEMENTED / COMPILER BLOCKED) |
 | `docs/SOURCES.md` | Provenance: the two generations, the re-license, the dump extraction, the first-generation merge, and what was left in the archive |
+| `docs/invariants.md` | Mathematical invariants of M2Stack (I1–I10), each proven by tracing the source; tests sample, invariants prove |
 
 ### `build/` and `benchmarks/`
 
@@ -426,6 +428,7 @@ build records are now `.md` with headers, content preserved in fences.
 | Pairing | 46 paired; 0 definition-only; 0 implementation-only |
 | Source lines | 5,453 (4,993 pre-header + 460 header lines) |
 | Edge-case checks | 33, traced from source, not executed |
+| Invariant proofs | M2Stack I1–I10, proven by source trace; 26 `HALT` checks encode them |
 | Supplied tests | `test_all` (5 checks), `test_core` (7 checks) — written, not executed |
 | `gm2` compile | BLOCKED — compiler not installed |
 | Archive pairing | 34 paired (first generation, `archive/`) |
