@@ -121,5 +121,4 @@ Notes on the arrows (only the ones verified by reading the `.mod` files):
 | `build/` | `build.sh` (supplied; exits 2 with BLOCKED when `gm2` is absent) |
 | `docs/` | This file, `edge-cases.md`, `api/` (reserved) |
 | `archive/first-generation-2026-10-18/` | First generation, verbatim, 34 modules / 68 files |
-| `M2LIB_SOURCE_DUMP.txt` | Supplied dump of the main tree's 60 `src/` files |
-| `SOURCES.md` | Provenance: how the two generations were identified and kept separate |
+| `docs/SOURCES.md` | Provenance: how the two generations were identified and kept separate |

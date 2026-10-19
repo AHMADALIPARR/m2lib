@@ -6,8 +6,8 @@
 # M2Lib — Modula-2 Library
 
 [![Modula-2](https://img.shields.io/badge/language-Modula--2-blue)](https://en.wikipedia.org/wiki/Modula-2)
-[![Modules](https://img.shields.io/badge/modules-30%20paired-brightgreen)](MODULES.md)
-[![Source lines](https://img.shields.io/badge/source%20lines-2888-brightgreen)](MODULES.md)
+[![Modules](https://img.shields.io/badge/modules-30%20paired-brightgreen)](docs/MODULES.md)
+[![Source lines](https://img.shields.io/badge/source%20lines-2888-brightgreen)](docs/MODULES.md)
 [![Demos](https://img.shields.io/badge/demos-14-blue)](examples/)
 [![Edge cases](https://img.shields.io/badge/edge%20cases-33-blue)](docs/edge-cases.md)
 [![Compiler](https://img.shields.io/badge/gm2-BLOCKED-red)](docs/architecture.md)
@@ -20,9 +20,11 @@ with a pinned toolchain.
 
 > License: SNAPKITTY OPAQUE SOURCE LICENSE v1.0
 > (`LicenseRef-Sovereign-Leviathan-SL-AGPL3-001`). See `LICENSE`.
-> Every main-tree source and doc file carries the Opaque header.
-> The `archive/` tree keeps its supplied MIT `LICENSE` as a historical
-> artifact, and `M2LIB_SOURCE_DUMP.txt` is the pre-relicense snapshot.
+> Every file in the repo carries the Opaque header, except the two
+> `LICENSE` files themselves (which start with the SPDX identifier) and
+> four build artifacts in `archive/` (two `.json`, two `.log`) where a
+> header would corrupt the data or falsify the log. No `.txt`, `.zip`,
+> or source-dump files remain.
 
 ## Layout
 
@@ -33,9 +35,8 @@ with a pinned toolchain.
 | `tests/unit/` | Modula-2 tests incl. 33 edge-case checks |
 | `tests/integration/` | Reserved for end-to-end `gm2` runs |
 | `benchmarks/` | Reserved; no numbers claimed |
-| `docs/` | Architecture, edge cases, provenance |
-| `archive/` | First generation (2026-10-18), 34 modules, kept verbatim |
-| `M2LIB_SOURCE_DUMP.txt` | Supplied dump of the main tree's 60 `src/` files |
+| `docs/` | Architecture, edge cases, module ledger, provenance |
+| `archive/` | First generation (2026-10-18), 34 modules, same license/headers |
 
 ## Domains
 
@@ -116,7 +117,7 @@ All are written, not executed — `gm2` is unavailable, so no run claim is made.
 
 ## Status
 
-`MODULES.md` tracks implementation separately from compilation/testing.
+`docs/MODULES.md` tracks implementation separately from compilation/testing.
 Source files alone are not evidence of compiler success.
 
 | Check | Result |
@@ -133,6 +134,8 @@ SHA-256 fails closed rather than returning a fabricated digest until a portable
 ## Provenance
 
 This repo holds two divergent generations, kept separate rather than merged:
-see [SOURCES.md](SOURCES.md). The `archive/` tree is the 2026-10-18 generation,
-verbatim. The root tree is the 2026-10-19 "complete" generation, verbatim,
-plus assistant-added docs, demos, tests, and this README.
+see [docs/SOURCES.md](docs/SOURCES.md). The `archive/` tree is the 2026-10-18
+generation; the root tree is the 2026-10-19 "complete" generation, plus
+assistant-added docs, demos, and tests. Both trees carry the Opaque license
+and headers; source content is unchanged apart from headers, the archive's
+two `.txt` build records (now `.md`), and its `LICENSE` swap.

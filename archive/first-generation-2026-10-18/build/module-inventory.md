@@ -1,3 +1,11 @@
+<!-- SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 -->
+<!-- Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. -->
+<!-- Authored by Ahmad Ali Parr. -->
+<!-- Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. -->
+
+# Module inventory (first generation, as supplied)
+
+```text
 68 source files; 3230 source lines
 IMPLEMENTED_UNCOMPILED     37 src/algorithms/M2Graph.def
 IMPLEMENTED_UNCOMPILED    105 src/algorithms/M2Graph.mod
@@ -67,3 +75,4 @@ IMPLEMENTED_UNCOMPILED     38 src/text/M2Text.def
 IMPLEMENTED_UNCOMPILED    148 src/text/M2Text.mod
 IMPLEMENTED_UNCOMPILED     17 src/text/M2UTF8.def
 IMPLEMENTED_UNCOMPILED     79 src/text/M2UTF8.mod
+```
