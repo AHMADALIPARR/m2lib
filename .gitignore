@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 build/objects/
 build/logs/
+build/dump-extracted/
 *.o
 *.sym
 *.ppu

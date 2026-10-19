@@ -60,3 +60,20 @@ pairing checks. So nothing was overwritten:
   "M2Lib contributors"; first-gen: "SnapKitty Collective contributors") and no
   per-file headers. The main-tree MIT `LICENSE` has been replaced; the archive's
   MIT `LICENSE` remains.
+
+## Dump extraction (2026-10-19, user-directed)
+
+- `M2LIB_SOURCE_DUMP.txt` was extracted into actual code files, organized into
+  directories, by `tools/extract_dump.py`
+  (`python3 tools/extract_dump.py --out build/dump-extracted --verify`).
+  The extractor reproduces the dump's own directory layout:
+  `src/algorithms/`, `src/collections/`, `src/core/`, `src/filesystem/`,
+  `src/formats/`, `src/io/`, `src/math/`, `src/network/`, `src/security/`,
+  `src/text/`, `src/time/` — 60 files.
+- Verification: 60/60 extracted files match `src/` (ignoring the Opaque headers),
+  and the extraction is byte-identical to the supplied pre-header originals.
+  The code in `src/` **is** the dump's contents, organized into directories —
+  no second copy was committed. `build/dump-extracted/` is derived output
+  (gitignored); re-run the extractor any time to re-materialize it.
+- The dump file itself is retained as the supplied snapshot; the extractor is
+  the proof that `src/` and the dump are the same code.
