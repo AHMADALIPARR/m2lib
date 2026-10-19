@@ -1,0 +1,19 @@
+DEFINITION MODULE M2Complex;
+
+EXPORT QUALIFIED Complex,Make,Add,Subtract,Multiply,MagnitudeSquared,Conjugate;
+
+TYPE Complex=RECORD re,im:REAL END;
+
+PROCEDURE Make(re,im:REAL):Complex;
+
+PROCEDURE Add(a,b:Complex):Complex;
+
+PROCEDURE Subtract(a,b:Complex):Complex;
+
+PROCEDURE Multiply(a,b:Complex):Complex;
+
+PROCEDURE MagnitudeSquared(a:Complex):REAL;
+
+PROCEDURE Conjugate(a:Complex):Complex;
+
+END M2Complex.

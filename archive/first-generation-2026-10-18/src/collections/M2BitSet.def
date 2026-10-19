@@ -1,0 +1,32 @@
+DEFINITION MODULE M2BitSet;
+
+EXPORT QUALIFIED BitSet, Create, Destroy, Add, Remove, Contains, Clear, Count, Union, Intersect;
+
+TYPE BitSet = POINTER TO BitSetDesc;
+ BitSetDesc = RECORD words: POINTER TO ARRAY OF CARDINAL;
+ bits, wordCount: CARDINAL END;
+
+PROCEDURE Create (bits: CARDINAL): BitSet;
+
+PROCEDURE Destroy (VAR s: BitSet);
+
+PROCEDURE Add (s: BitSet;
+ item: CARDINAL): BOOLEAN;
+
+PROCEDURE Remove (s: BitSet;
+ item: CARDINAL): BOOLEAN;
+
+PROCEDURE Contains (s: BitSet;
+ item: CARDINAL): BOOLEAN;
+
+PROCEDURE Clear (s: BitSet);
+
+PROCEDURE Count (s: BitSet): CARDINAL;
+
+PROCEDURE Union (a,b: BitSet;
+ destination: BitSet): BOOLEAN;
+
+PROCEDURE Intersect (a,b: BitSet;
+ destination: BitSet): BOOLEAN;
+
+END M2BitSet.

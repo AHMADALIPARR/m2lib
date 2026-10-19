@@ -1,0 +1,28 @@
+DEFINITION MODULE M2Stack;
+
+FROM M2Vector IMPORT Vector;
+
+EXPORT QUALIFIED Stack, Create, Destroy, Push, Pop, Peek, Size, IsEmpty, Clear;
+
+TYPE Stack = Vector;
+
+PROCEDURE Create (initialCapacity: CARDINAL): Stack;
+
+PROCEDURE Destroy (VAR s: Stack);
+
+PROCEDURE Push (s: Stack;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE Pop (s: Stack;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Peek (s: Stack;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Size (s: Stack): CARDINAL;
+
+PROCEDURE IsEmpty (s: Stack): BOOLEAN;
+
+PROCEDURE Clear (s: Stack);
+
+END M2Stack.

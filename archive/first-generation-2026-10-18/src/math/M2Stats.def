@@ -1,0 +1,21 @@
+DEFINITION MODULE M2Stats;
+
+EXPORT QUALIFIED Mean, Variance, MinMax, Sum;
+
+PROCEDURE Sum (a: ARRAY OF REAL;
+ n: CARDINAL): REAL;
+
+PROCEDURE Mean (a: ARRAY OF REAL;
+ n: CARDINAL;
+ VAR value: REAL): BOOLEAN;
+
+PROCEDURE Variance (a: ARRAY OF REAL;
+ n: CARDINAL;
+ sample: BOOLEAN;
+ VAR value: REAL): BOOLEAN;
+
+PROCEDURE MinMax (a: ARRAY OF REAL;
+ n: CARDINAL;
+ VAR minimum, maximum: REAL): BOOLEAN;
+
+END M2Stats.

@@ -1,0 +1,172 @@
+{
+  "M2BST": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Base64": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Binary": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2BitOps": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2BitSet": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2CRC16": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2CRC32": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2CSV": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Char": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Complex": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Date": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Endian": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Errors": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Graph": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Hash": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Heap": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Hex": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Integer": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Interpolation": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2JSON": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2KMP": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2List": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Matrix": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Parse": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Random": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Rational": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2RingQueue": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Search": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Sort": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Stack": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Stats": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Text": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2UTF8": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  },
+  "M2Vector": {
+    "definition": "IMPLEMENTED",
+    "implementation": "IMPLEMENTED",
+    "compiler_status": "BLOCKED"
+  }
+}

@@ -1,0 +1,19 @@
+DEFINITION MODULE M2NetFrame;
+
+EXPORT QUALIFIED Encode,Decode;
+
+PROCEDURE Encode(payload:ARRAY OF CHAR;
+
+VAR frame:ARRAY OF CHAR;
+
+VAR frameLen:CARDINAL):BOOLEAN;
+
+PROCEDURE Decode(frame:ARRAY OF CHAR;
+
+frameLen:CARDINAL;
+
+VAR payload:ARRAY OF CHAR;
+
+VAR payloadLen:CARDINAL):BOOLEAN;
+
+END M2NetFrame.

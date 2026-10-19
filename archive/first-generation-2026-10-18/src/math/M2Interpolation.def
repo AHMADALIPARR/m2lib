@@ -1,0 +1,21 @@
+DEFINITION MODULE M2Interpolation;
+
+EXPORT QUALIFIED Linear, Trapezoid, Bisect, Lagrange;
+
+PROCEDURE Linear (x0,y0,x1,y1,x: REAL;
+ VAR y: REAL): BOOLEAN;
+
+PROCEDURE Trapezoid (a,b: REAL;
+ steps: CARDINAL;
+ VAR integral: REAL): BOOLEAN;
+
+PROCEDURE Bisect (a,b,tolerance: REAL;
+ maxIterations: CARDINAL;
+ VAR root: REAL): BOOLEAN;
+
+PROCEDURE Lagrange (xs,ys: ARRAY OF REAL;
+ n: CARDINAL;
+ x: REAL;
+ VAR y: REAL): BOOLEAN;
+
+END M2Interpolation.

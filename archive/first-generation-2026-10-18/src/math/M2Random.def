@@ -1,0 +1,17 @@
+DEFINITION MODULE M2Random;
+
+EXPORT QUALIFIED Seed, Next, Bounded, UnitReal;
+
+TYPE Generator = CARDINAL;
+
+PROCEDURE Seed (value: CARDINAL): Generator;
+
+PROCEDURE Next (VAR state: Generator): CARDINAL;
+
+PROCEDURE Bounded (VAR state: Generator;
+ bound: CARDINAL;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE UnitReal (VAR state: Generator): REAL;
+
+END M2Random.

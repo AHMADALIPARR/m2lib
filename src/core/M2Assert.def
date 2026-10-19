@@ -1,0 +1,23 @@
+DEFINITION MODULE M2Assert;
+
+EXPORT QUALIFIED Assert, AssertMsg, Require, Ensure, Invariant;
+
+PROCEDURE Assert(cond:BOOLEAN);
+
+PROCEDURE AssertMsg(cond:BOOLEAN;
+
+msg:ARRAY OF CHAR);
+
+PROCEDURE Require(cond:BOOLEAN;
+
+msg:ARRAY OF CHAR);
+
+PROCEDURE Ensure(cond:BOOLEAN;
+
+msg:ARRAY OF CHAR);
+
+PROCEDURE Invariant(cond:BOOLEAN;
+
+msg:ARRAY OF CHAR);
+
+END M2Assert.

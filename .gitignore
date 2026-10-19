@@ -1,0 +1,9 @@
+# Generated / cache - never committed
+__pycache__/
+*.pyc
+.pytest_cache/
+build/objects/
+build/logs/
+*.o
+*.sym
+*.ppu

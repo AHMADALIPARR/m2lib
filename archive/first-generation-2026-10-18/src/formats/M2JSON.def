@@ -1,0 +1,13 @@
+DEFINITION MODULE M2JSON;
+
+EXPORT QUALIFIED EscapeString, UnescapeString, IsNumber;
+
+PROCEDURE EscapeString (source: ARRAY OF CHAR;
+ VAR destination: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE UnescapeString (source: ARRAY OF CHAR;
+ VAR destination: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE IsNumber (source: ARRAY OF CHAR): BOOLEAN;
+
+END M2JSON.

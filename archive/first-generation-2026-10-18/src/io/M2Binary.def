@@ -1,0 +1,49 @@
+DEFINITION MODULE M2Binary;
+
+EXPORT QUALIFIED Writer, Reader, InitWriter, InitReader, PutByte, PutU16BE, PutU32BE, PutBytes, GetByte, GetU16BE, GetU32BE, GetBytes, Position, Remaining;
+
+TYPE Writer = RECORD data: POINTER TO ARRAY OF CHAR;
+ capacity, used: CARDINAL END;
+
+     Reader = RECORD data: POINTER TO ARRAY OF CHAR;
+ length, position: CARDINAL END;
+
+PROCEDURE InitWriter (VAR w: Writer;
+ data: POINTER TO ARRAY OF CHAR;
+ capacity: CARDINAL);
+
+PROCEDURE InitReader (VAR r: Reader;
+ data: POINTER TO ARRAY OF CHAR;
+ length: CARDINAL);
+
+PROCEDURE PutByte (VAR w: Writer;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE PutU16BE (VAR w: Writer;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE PutU32BE (VAR w: Writer;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE PutBytes (VAR w: Writer;
+ source: ARRAY OF CHAR;
+ length: CARDINAL): BOOLEAN;
+
+PROCEDURE GetByte (VAR r: Reader;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE GetU16BE (VAR r: Reader;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE GetU32BE (VAR r: Reader;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE GetBytes (VAR r: Reader;
+ VAR destination: ARRAY OF CHAR;
+ length: CARDINAL): BOOLEAN;
+
+PROCEDURE Position (r: Reader): CARDINAL;
+
+PROCEDURE Remaining (r: Reader): CARDINAL;
+
+END M2Binary.

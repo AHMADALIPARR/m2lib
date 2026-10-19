@@ -1,0 +1,23 @@
+DEFINITION MODULE M2Path;
+
+EXPORT QUALIFIED Join,Basename,Dirname,Extension,IsAbsolute;
+
+PROCEDURE Join(a,b:ARRAY OF CHAR;
+
+VAR out:ARRAY OF CHAR):BOOLEAN;
+
+PROCEDURE Basename(path:ARRAY OF CHAR;
+
+VAR out:ARRAY OF CHAR);
+
+PROCEDURE Dirname(path:ARRAY OF CHAR;
+
+VAR out:ARRAY OF CHAR);
+
+PROCEDURE Extension(path:ARRAY OF CHAR;
+
+VAR out:ARRAY OF CHAR);
+
+PROCEDURE IsAbsolute(path:ARRAY OF CHAR):BOOLEAN;
+
+END M2Path.

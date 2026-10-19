@@ -1,0 +1,19 @@
+DEFINITION MODULE M2Errors;
+
+EXPORT QUALIFIED ErrorCode, Success, ErrGeneric, ErrOutOfMemory, ErrInvalidArg, ErrIndexOutOfBounds, ErrNotFound, ErrAlreadyExists, ErrIO, ErrOverflow, ErrUnderflow, ErrDivByZero, ErrDomain, ErrRange, ErrFormat, ErrEOF, ErrPermission, ErrNotSupported, ErrTimeout, ErrBusy, ErrInterrupted, ErrCorrupt, ErrorToString, ReportError, ClearError, LastError;
+
+TYPE ErrorCode=(Success,ErrGeneric,ErrOutOfMemory,ErrInvalidArg,ErrIndexOutOfBounds,ErrNotFound,ErrAlreadyExists,ErrIO,ErrOverflow,ErrUnderflow,ErrDivByZero,ErrDomain,ErrRange,ErrFormat,ErrEOF,ErrPermission,ErrNotSupported,ErrTimeout,ErrBusy,ErrInterrupted,ErrCorrupt);
+
+PROCEDURE ErrorToString(code: ErrorCode;
+
+VAR s: ARRAY OF CHAR);
+
+PROCEDURE ReportError(code: ErrorCode;
+
+msg: ARRAY OF CHAR);
+
+PROCEDURE ClearError;
+
+PROCEDURE LastError(): ErrorCode;
+
+END M2Errors.

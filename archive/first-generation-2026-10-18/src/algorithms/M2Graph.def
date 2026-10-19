@@ -1,0 +1,37 @@
+DEFINITION MODULE M2Graph;
+
+EXPORT QUALIFIED Graph, Create, Destroy, AddEdge, RemoveEdge, HasEdge, Degree, BFS, DFS;
+
+TYPE Graph = POINTER TO GraphDesc;
+ GraphDesc = RECORD matrix: POINTER TO ARRAY OF CARDINAL;
+ vertices, edges: CARDINAL END;
+
+PROCEDURE Create (vertices: CARDINAL): Graph;
+
+PROCEDURE Destroy (VAR g: Graph);
+
+PROCEDURE AddEdge (g: Graph;
+ fromVertex,toVertex: CARDINAL;
+ directed: BOOLEAN): BOOLEAN;
+
+PROCEDURE RemoveEdge (g: Graph;
+ fromVertex,toVertex: CARDINAL;
+ directed: BOOLEAN): BOOLEAN;
+
+PROCEDURE HasEdge (g: Graph;
+ fromVertex,toVertex: CARDINAL): BOOLEAN;
+
+PROCEDURE Degree (g: Graph;
+ vertex: CARDINAL): CARDINAL;
+
+PROCEDURE BFS (g: Graph;
+ start: CARDINAL;
+ VAR order: ARRAY OF CARDINAL;
+ VAR count: CARDINAL): BOOLEAN;
+
+PROCEDURE DFS (g: Graph;
+ start: CARDINAL;
+ VAR order: ARRAY OF CARDINAL;
+ VAR count: CARDINAL): BOOLEAN;
+
+END M2Graph.

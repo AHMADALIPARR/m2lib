@@ -1,0 +1,13 @@
+DEFINITION MODULE M2Base64;
+
+EXPORT QUALIFIED Encode, Decode;
+
+PROCEDURE Encode (source: ARRAY OF CHAR;
+ length: CARDINAL;
+ VAR destination: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE Decode (source: ARRAY OF CHAR;
+ VAR destination: ARRAY OF CHAR;
+ VAR written: CARDINAL): BOOLEAN;
+
+END M2Base64.

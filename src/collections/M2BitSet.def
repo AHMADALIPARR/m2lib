@@ -1,0 +1,27 @@
+DEFINITION MODULE M2BitSet;
+
+EXPORT QUALIFIED Bits,Empty,SetBit,ClearBit,TestBit,CountBits,Union,Intersection;
+
+TYPE Bits=BITSET;
+
+PROCEDURE Empty():Bits;
+
+PROCEDURE SetBit(VAR b:Bits;
+
+n:CARDINAL);
+
+PROCEDURE ClearBit(VAR b:Bits;
+
+n:CARDINAL);
+
+PROCEDURE TestBit(b:Bits;
+
+n:CARDINAL):BOOLEAN;
+
+PROCEDURE CountBits(b:Bits):CARDINAL;
+
+PROCEDURE Union(a,b:Bits):Bits;
+
+PROCEDURE Intersection(a,b:Bits):Bits;
+
+END M2BitSet.

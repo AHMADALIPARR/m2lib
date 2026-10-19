@@ -1,0 +1,38 @@
+DEFINITION MODULE M2Text;
+
+EXPORT QUALIFIED Length, Equal, Compare, Find, StartsWith, EndsWith,
+  Copy, TrimLeft, TrimRight, Trim, ReplaceChar, CountChar;
+
+PROCEDURE Length (s: ARRAY OF CHAR): CARDINAL;
+
+PROCEDURE Equal (a, b: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE Compare (a, b: ARRAY OF CHAR): INTEGER;
+
+PROCEDURE Find (s, pattern: ARRAY OF CHAR;
+ VAR position: CARDINAL): BOOLEAN;
+
+PROCEDURE StartsWith (s, prefix: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE EndsWith (s, suffix: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE Copy (src: ARRAY OF CHAR;
+ VAR dst: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE TrimLeft (s: ARRAY OF CHAR;
+ VAR dst: ARRAY OF CHAR);
+
+PROCEDURE TrimRight (s: ARRAY OF CHAR;
+ VAR dst: ARRAY OF CHAR);
+
+PROCEDURE Trim (s: ARRAY OF CHAR;
+ VAR dst: ARRAY OF CHAR);
+
+PROCEDURE ReplaceChar (s: ARRAY OF CHAR;
+ oldChar, newChar: CHAR;
+ VAR dst: ARRAY OF CHAR);
+
+PROCEDURE CountChar (s: ARRAY OF CHAR;
+ c: CHAR): CARDINAL;
+
+END M2Text.

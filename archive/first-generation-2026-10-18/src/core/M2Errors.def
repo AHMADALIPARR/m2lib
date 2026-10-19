@@ -1,0 +1,30 @@
+DEFINITION MODULE M2Errors;
+
+EXPORT QUALIFIED ErrorCode, ErrorHandler, SetHandler, ReportError,
+  ErrNone, ErrInvalidArgument, ErrOutOfMemory, ErrIndexOutOfBounds,
+  ErrUnderflow, ErrOverflow, ErrNotFound, ErrInvalidFormat, ErrIO;
+
+TYPE
+  ErrorCode = CARDINAL;
+
+  ErrorHandler = PROCEDURE (ErrorCode, ARRAY OF CHAR);
+
+CONST
+  ErrNone = 0;
+ ErrInvalidArgument = 1;
+ ErrOutOfMemory = 2;
+
+  ErrIndexOutOfBounds = 3;
+ ErrUnderflow = 4;
+ ErrOverflow = 5;
+
+  ErrNotFound = 6;
+ ErrInvalidFormat = 7;
+ ErrIO = 8;
+
+PROCEDURE SetHandler (h: ErrorHandler);
+
+PROCEDURE ReportError (code: ErrorCode;
+ context: ARRAY OF CHAR);
+
+END M2Errors.

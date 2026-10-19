@@ -1,0 +1,15 @@
+DEFINITION MODULE M2Version;
+
+EXPORT QUALIFIED Major,Minor,Patch,LibraryName,VersionString;
+
+CONST Major=0;
+
+Minor=1;
+
+Patch=0;
+
+LibraryName="M2Lib";
+
+PROCEDURE VersionString(VAR s:ARRAY OF CHAR);
+
+END M2Version.

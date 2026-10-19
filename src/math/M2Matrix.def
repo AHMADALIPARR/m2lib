@@ -1,0 +1,21 @@
+DEFINITION MODULE M2Matrix;
+
+EXPORT QUALIFIED Matrix2,Make2,Add2,Multiply2,Determinant2,Apply2;
+
+TYPE Matrix2=RECORD a11,a12,a21,a22:REAL END;
+
+PROCEDURE Make2(a11,a12,a21,a22:REAL):Matrix2;
+
+PROCEDURE Add2(a,b:Matrix2):Matrix2;
+
+PROCEDURE Multiply2(a,b:Matrix2):Matrix2;
+
+PROCEDURE Determinant2(a:Matrix2):REAL;
+
+PROCEDURE Apply2(a:Matrix2;
+
+x,y:REAL;
+
+VAR ox,oy:REAL);
+
+END M2Matrix.

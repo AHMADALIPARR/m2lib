@@ -1,0 +1,31 @@
+DEFINITION MODULE M2Stack;
+
+EXPORT QUALIFIED Stack,Create,Destroy,Push,Pop,Peek,Size,IsEmpty;
+
+TYPE Stack=POINTER TO Node;
+
+Node=RECORD value:CARDINAL;
+
+next:Stack END;
+
+PROCEDURE Create():Stack;
+
+PROCEDURE Destroy(VAR s:Stack);
+
+PROCEDURE Push(VAR s:Stack;
+
+v:CARDINAL):BOOLEAN;
+
+PROCEDURE Pop(VAR s:Stack;
+
+VAR v:CARDINAL):BOOLEAN;
+
+PROCEDURE Peek(s:Stack;
+
+VAR v:CARDINAL):BOOLEAN;
+
+PROCEDURE Size(s:Stack):CARDINAL;
+
+PROCEDURE IsEmpty(s:Stack):BOOLEAN;
+
+END M2Stack.

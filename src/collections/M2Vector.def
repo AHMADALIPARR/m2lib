@@ -1,0 +1,47 @@
+DEFINITION MODULE M2Vector;
+
+FROM SYSTEM IMPORT ADDRESS;
+
+EXPORT QUALIFIED Vector,Create,Destroy,Push,Pop,Get,Set,Size,Capacity,Reserve,Clear,IsEmpty;
+
+TYPE Vector=POINTER TO VectorDesc;
+
+VectorDesc=RECORD data:ADDRESS;
+
+len,cap:CARDINAL END;
+
+PROCEDURE Create(initCap:CARDINAL):Vector;
+
+PROCEDURE Destroy(VAR v:Vector);
+
+PROCEDURE Push(v:Vector;
+
+val:CARDINAL):BOOLEAN;
+
+PROCEDURE Pop(v:Vector;
+
+VAR val:CARDINAL):BOOLEAN;
+
+PROCEDURE Get(v:Vector;
+
+idx:CARDINAL;
+
+VAR val:CARDINAL):BOOLEAN;
+
+PROCEDURE Set(v:Vector;
+
+idx,val:CARDINAL):BOOLEAN;
+
+PROCEDURE Size(v:Vector):CARDINAL;
+
+PROCEDURE Capacity(v:Vector):CARDINAL;
+
+PROCEDURE Reserve(v:Vector;
+
+newCap:CARDINAL):BOOLEAN;
+
+PROCEDURE Clear(v:Vector);
+
+PROCEDURE IsEmpty(v:Vector):BOOLEAN;
+
+END M2Vector.

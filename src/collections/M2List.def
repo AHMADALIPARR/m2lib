@@ -1,0 +1,33 @@
+DEFINITION MODULE M2List;
+
+EXPORT QUALIFIED List,Create,Destroy,Append,Prepend,RemoveFirst,Length,Contains;
+
+TYPE List=POINTER TO Node;
+
+Node=RECORD value:CARDINAL;
+
+next:List END;
+
+PROCEDURE Create():List;
+
+PROCEDURE Destroy(VAR l:List);
+
+PROCEDURE Append(VAR l:List;
+
+value:CARDINAL):BOOLEAN;
+
+PROCEDURE Prepend(VAR l:List;
+
+value:CARDINAL):BOOLEAN;
+
+PROCEDURE RemoveFirst(VAR l:List;
+
+VAR value:CARDINAL):BOOLEAN;
+
+PROCEDURE Length(l:List):CARDINAL;
+
+PROCEDURE Contains(l:List;
+
+value:CARDINAL):BOOLEAN;
+
+END M2List.

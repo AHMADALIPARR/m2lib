@@ -1,0 +1,33 @@
+DEFINITION MODULE M2Queue;
+
+EXPORT QUALIFIED Queue,Create,Destroy,Enqueue,Dequeue,Front,Size,IsEmpty,Clear;
+
+TYPE Queue=POINTER TO QueueDesc;
+
+QueueDesc=RECORD data:POINTER TO ARRAY OF CARDINAL;
+
+cap,head,len:CARDINAL END;
+
+PROCEDURE Create(capacity:CARDINAL):Queue;
+
+PROCEDURE Destroy(VAR q:Queue);
+
+PROCEDURE Enqueue(q:Queue;
+
+value:CARDINAL):BOOLEAN;
+
+PROCEDURE Dequeue(q:Queue;
+
+VAR value:CARDINAL):BOOLEAN;
+
+PROCEDURE Front(q:Queue;
+
+VAR value:CARDINAL):BOOLEAN;
+
+PROCEDURE Size(q:Queue):CARDINAL;
+
+PROCEDURE IsEmpty(q:Queue):BOOLEAN;
+
+PROCEDURE Clear(q:Queue);
+
+END M2Queue.

@@ -1,0 +1,37 @@
+DEFINITION MODULE M2List;
+
+EXPORT QUALIFIED List, Create, Destroy, Append, Prepend, RemoveFirst, Get, Set, Length, IsEmpty, Clear, Reverse;
+
+TYPE List = POINTER TO ListDesc;
+ ListDesc = RECORD first,last: POINTER TO Node;
+ len: CARDINAL END;
+
+PROCEDURE Create (): List;
+
+PROCEDURE Destroy (VAR list: List);
+
+PROCEDURE Append (list: List;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE Prepend (list: List;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE RemoveFirst (list: List;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Get (list: List;
+ index: CARDINAL;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Set (list: List;
+ index,value: CARDINAL): BOOLEAN;
+
+PROCEDURE Length (list: List): CARDINAL;
+
+PROCEDURE IsEmpty (list: List): BOOLEAN;
+
+PROCEDURE Clear (list: List);
+
+PROCEDURE Reverse (list: List);
+
+END M2List.

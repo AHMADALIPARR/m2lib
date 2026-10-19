@@ -1,0 +1,25 @@
+DEFINITION MODULE M2Complex;
+
+EXPORT QUALIFIED Complex, Make, Add, Subtract, Multiply, Divide, MagnitudeSquared, Conjugate, Scale;
+
+TYPE Complex = RECORD re, im: REAL END;
+
+PROCEDURE Make (re,im: REAL): Complex;
+
+PROCEDURE Add (a,b: Complex): Complex;
+
+PROCEDURE Subtract (a,b: Complex): Complex;
+
+PROCEDURE Multiply (a,b: Complex): Complex;
+
+PROCEDURE Divide (a,b: Complex;
+ VAR result: Complex): BOOLEAN;
+
+PROCEDURE MagnitudeSquared (z: Complex): REAL;
+
+PROCEDURE Conjugate (z: Complex): Complex;
+
+PROCEDURE Scale (z: Complex;
+ factor: REAL): Complex;
+
+END M2Complex.
