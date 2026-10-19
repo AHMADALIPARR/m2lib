@@ -8,7 +8,10 @@
 Main tree = complete generation (2026-10-19) plus first-generation code from the
 first generation (see `SOURCES.md`): 46 modules, 92 paired `.def`/`.mod` files,
 5,453 source lines (4,993 pre-header + 460 header lines). Every module has exactly one definition and one implementation.
-No compile or run claim: `gm2` was unavailable in the generation environment and on this VM.
+Execution status: `gm2` 13.3.0 was installed on this VM 2026-10-19.
+`test_stack_invariants` (26 checks) and `test_all` (5 checks) were compiled
+and run — both PASS. Full-library compile is blocked by six dialect gaps;
+see `docs/portability.md`. No other compile or run claim is made.
 
 ## Domain map
 
@@ -138,6 +141,10 @@ Notes on the arrows (only the ones verified by reading the `.mod` files):
 - `M2Graph` BFS/DFS are a known defect: the `.def` declares a BOOLEAN result,
   the `.mod` implements them with no return. They are ported verbatim from the
   first generation; do not call them until the mismatch is fixed.
+- gm2 dialect gaps: the code uses `XOR`, `<<`/`>>`, `16#...` literals, `;`
+  in procedure types, bare `NEW`/`DISPOSE`, and octal char literals like
+  `9C` — none accepted by gm2 13.3.0. Fixes offered, not installed; see
+  `docs/portability.md`.
 - `M2Char.IsSpace` differs from `M2Chars.IsSpace`: the first-generation version
   also accepts 18 (12X) and 64 (40X). `M2Text.Length` stops at `HIGH(s)` where
   `M2Strings.Length` stops at `HIGH(s)+1`, so a NUL-free full array reads one

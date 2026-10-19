@@ -10,7 +10,7 @@
 [![Source lines](https://img.shields.io/badge/source%20lines-5453-brightgreen)](docs/MODULES.md)
 [![Demos](https://img.shields.io/badge/demos-14-blue)](examples/)
 [![Edge cases](https://img.shields.io/badge/edge%20cases-33-blue)](docs/edge-cases.md)
-[![Compiler](https://img.shields.io/badge/gm2-BLOCKED-red)](docs/architecture.md)
+[![Compiler](https://img.shields.io/badge/gm2-13.3.0%20installed-yellow)](docs/portability.md)
 [![License](https://img.shields.io/badge/license-Sovereign--Leviathan--SL--AGPL3--001-blue.svg)](LICENSE)
 
 M2Lib is a Modula-2 standard library: **46 paired modules** (`.def` definition +
@@ -59,7 +59,7 @@ crashing or fabricating a result.
 | Two APIs where generations differ | `M2Binary`, `M2Matrix`, `M2Random`, `M2Sort` carry both generations' APIs side by side instead of one silently replacing the other. |
 | Error handling | `M2Errors` gives 21 named error codes, `ErrorToString`, `LastError`, and an optional `SetHandler` callback for callers that want to intercept reports. |
 | No hidden state (mostly) | Most modules are stateless functions. The exceptions are named: `M2Random` module-state RNG, `M2Errors` last-error slot, and per-handle state (`Tree`, `Queue`, `Vector`, `Graph`, `Generator`). |
-| Written, not executed | All code is authored and structurally checked. No compile or run claim is made: `gm2` was unavailable in the generation environment and on this VM. |
+| Partly executed | `gm2` 13.3.0 was installed on this VM 2026-10-19 and two test programs were compiled and run (both PASS). The rest of the library does not compile under gm2 as written — see `docs/portability.md` for the six dialect gaps the compiler found. |
 
 ## Quick start
 
@@ -333,7 +333,7 @@ Every file in the repo, by directory. `src/` rows are one module each
 ### `examples/` — 14 demos, written not executed
 
 Every demo uses only procedures in the imported modules' `.def` files.
-All are written, not executed — `gm2` is unavailable, so no run claim is made.
+Two of the four test programs have been compiled and run under `gm2` 13.3.0 (both PASS); the rest are blocked by the dialect gaps in `docs/portability.md`.
 
 | Demo | Covers |
 |---|---|
@@ -377,6 +377,7 @@ All are written, not executed — `gm2` is unavailable, so no run claim is made.
 | `docs/edge-cases.md` | 33 edge cases, each traced from the corresponding `.mod` implementation, labelled traced-not-executed |
 | `docs/MODULES.md` | Per-module status ledger (46 modules, all IMPLEMENTED / COMPILER BLOCKED) |
 | `docs/SOURCES.md` | Provenance: the two generations, the re-license, the dump extraction, the first-generation merge, and what was left in the archive |
+| `docs/portability.md` | `gm2` 13.3.0 findings: what executed (PASS), what is blocked, and the six dialect gaps with fixes offered, not installed |
 | `docs/invariants.md` | Mathematical invariants of M2Stack (I1–I10), each proven by tracing the source; tests sample, invariants prove |
 
 ### `build/` and `benchmarks/`
@@ -429,8 +430,8 @@ build records are now `.md` with headers, content preserved in fences.
 | Source lines | 5,453 (4,993 pre-header + 460 header lines) |
 | Edge-case checks | 33, traced from source, not executed |
 | Invariant proofs | M2Stack I1–I10, proven by source trace; 26 `HALT` checks encode them |
-| Supplied tests | `test_all` (5 checks), `test_core` (7 checks) — written, not executed |
-| `gm2` compile | BLOCKED — compiler not installed |
+| Supplied tests | `test_all` (5 checks) — EXECUTED, PASS, exit 0. `test_core` (7 checks) — blocked by dialect gaps, see `docs/portability.md` |
+| `gm2` compile | gm2 13.3.0 installed on this VM 2026-10-19. Full-library compile blocked by six dialect gaps (XOR, shifts, based literals, procedure-type `;`, `NEW`/`DISPOSE` import, octal char literals) — fixes offered, not installed |
 | Archive pairing | 34 paired (first generation, `archive/`) |
 
 `docs/edge-cases.md` lists 33 edge cases, each traced from the
@@ -449,7 +450,7 @@ documented where they occur.
 
 | Boundary | Detail |
 |---|---|
-| No compiler | `gm2` is not installed on this VM and was absent in the generation environment. Every "written, not executed" label means exactly that. |
+| Compiler vs. dialect | `gm2` 13.3.0 is now installed on this VM, but the library as written does not compile under it: the code uses a dialect with `XOR`, `<<`/`>>`, `16#...` literals, `;` in procedure types, bare `NEW`/`DISPOSE`, and octal char literals like `9C`. Six gaps, fixes offered not installed — see `docs/portability.md`. |
 | `M2Graph` BFS/DFS defect | `.def` declares a BOOLEAN result; `.mod` implements them with no return. Do not call BFS/DFS until the mismatch is fixed. |
 | `M2SHA256` fails closed | `DigestHex` returns `FALSE` and empties `out`. No digest is ever returned until a portable 32-bit arithmetic backend is verified. |
 | Runtime imports not in repo | `StrIO`, `NumberIO`, `Storage`, `SYSTEM` are imported by `M2Errors`, `M2Assert`, `M2Vector`, `M2BitOps` but are not part of this repo. |
