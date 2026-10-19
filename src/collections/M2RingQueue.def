@@ -1,0 +1,38 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2RingQueue;
+
+EXPORT QUALIFIED Queue, Create, Destroy, Enqueue, Dequeue, Front, Size, Capacity, IsEmpty, IsFull, Clear;
+
+TYPE Queue = POINTER TO QueueDesc;
+
+     QueueDesc = RECORD data: POINTER TO ARRAY OF CARDINAL;
+ head, len, cap: CARDINAL END;
+
+PROCEDURE Create (capacity: CARDINAL): Queue;
+
+PROCEDURE Destroy (VAR q: Queue);
+
+PROCEDURE Enqueue (q: Queue;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE Dequeue (q: Queue;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Front (q: Queue;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Size (q: Queue): CARDINAL;
+
+PROCEDURE Capacity (q: Queue): CARDINAL;
+
+PROCEDURE IsEmpty (q: Queue): BOOLEAN;
+
+PROCEDURE IsFull (q: Queue): BOOLEAN;
+
+PROCEDURE Clear (q: Queue);
+
+END M2RingQueue.

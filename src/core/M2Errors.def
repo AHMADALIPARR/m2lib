@@ -5,9 +5,11 @@
 
 DEFINITION MODULE M2Errors;
 
-EXPORT QUALIFIED ErrorCode, Success, ErrGeneric, ErrOutOfMemory, ErrInvalidArg, ErrIndexOutOfBounds, ErrNotFound, ErrAlreadyExists, ErrIO, ErrOverflow, ErrUnderflow, ErrDivByZero, ErrDomain, ErrRange, ErrFormat, ErrEOF, ErrPermission, ErrNotSupported, ErrTimeout, ErrBusy, ErrInterrupted, ErrCorrupt, ErrorToString, ReportError, ClearError, LastError;
+EXPORT QUALIFIED ErrorCode, Success, ErrGeneric, ErrOutOfMemory, ErrInvalidArg, ErrIndexOutOfBounds, ErrNotFound, ErrAlreadyExists, ErrIO, ErrOverflow, ErrUnderflow, ErrDivByZero, ErrDomain, ErrRange, ErrFormat, ErrEOF, ErrPermission, ErrNotSupported, ErrTimeout, ErrBusy, ErrInterrupted, ErrCorrupt, ErrorToString, ReportError, ClearError, LastError,ErrorHandler,SetHandler;
 
 TYPE ErrorCode=(Success,ErrGeneric,ErrOutOfMemory,ErrInvalidArg,ErrIndexOutOfBounds,ErrNotFound,ErrAlreadyExists,ErrIO,ErrOverflow,ErrUnderflow,ErrDivByZero,ErrDomain,ErrRange,ErrFormat,ErrEOF,ErrPermission,ErrNotSupported,ErrTimeout,ErrBusy,ErrInterrupted,ErrCorrupt);
+
+TYPE ErrorHandler = PROCEDURE (ErrorCode; ARRAY OF CHAR);
 
 PROCEDURE ErrorToString(code: ErrorCode;
 
@@ -20,5 +22,7 @@ msg: ARRAY OF CHAR);
 PROCEDURE ClearError;
 
 PROCEDURE LastError(): ErrorCode;
+
+PROCEDURE SetHandler(h: ErrorHandler);
 
 END M2Errors.

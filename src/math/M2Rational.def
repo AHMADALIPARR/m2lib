@@ -1,0 +1,34 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2Rational;
+
+EXPORT QUALIFIED Rational, Make, Add, Subtract, Multiply, Divide, Compare, ToReal;
+
+TYPE Rational = RECORD numerator: INTEGER;
+ denominator: CARDINAL END;
+
+PROCEDURE Make (n: INTEGER;
+ d: CARDINAL;
+ VAR r: Rational): BOOLEAN;
+
+PROCEDURE Add (a,b: Rational;
+ VAR r: Rational): BOOLEAN;
+
+PROCEDURE Subtract (a,b: Rational;
+ VAR r: Rational): BOOLEAN;
+
+PROCEDURE Multiply (a,b: Rational;
+ VAR r: Rational): BOOLEAN;
+
+PROCEDURE Divide (a,b: Rational;
+ VAR r: Rational): BOOLEAN;
+
+PROCEDURE Compare (a,b: Rational): INTEGER;
+
+PROCEDURE ToReal (r: Rational;
+ VAR value: REAL): BOOLEAN;
+
+END M2Rational.

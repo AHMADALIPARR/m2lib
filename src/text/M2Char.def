@@ -1,0 +1,32 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2Char;
+
+EXPORT QUALIFIED IsAlpha, IsDigit, IsAlphaNum, IsSpace, IsUpper, IsLower,
+  ToUpper, ToLower, IsHexDigit, HexValue;
+
+PROCEDURE IsAlpha (c: CHAR): BOOLEAN;
+
+PROCEDURE IsDigit (c: CHAR): BOOLEAN;
+
+PROCEDURE IsAlphaNum (c: CHAR): BOOLEAN;
+
+PROCEDURE IsSpace (c: CHAR): BOOLEAN;
+
+PROCEDURE IsUpper (c: CHAR): BOOLEAN;
+
+PROCEDURE IsLower (c: CHAR): BOOLEAN;
+
+PROCEDURE ToUpper (c: CHAR): CHAR;
+
+PROCEDURE ToLower (c: CHAR): CHAR;
+
+PROCEDURE IsHexDigit (c: CHAR): BOOLEAN;
+
+PROCEDURE HexValue (c: CHAR;
+ VAR value: CARDINAL): BOOLEAN;
+
+END M2Char.

@@ -107,4 +107,82 @@ l:=l^.next END;
 
 RETURN FALSE END Contains;
 
+PROCEDURE Get(l:List;
+
+index:CARDINAL;
+
+VAR value:CARDINAL):BOOLEAN;
+
+VAR p:List;
+
+i:CARDINAL;
+
+BEGIN p:=l;
+
+i:=0;
+
+WHILE(p#NIL)AND(i<index)DO p:=p^.next;
+
+INC(i)END;
+
+IF p=NIL THEN RETURN FALSE END;
+
+value:=p^.value;
+
+RETURN TRUE END Get;
+
+PROCEDURE Set(l:List;
+
+index,value:CARDINAL):BOOLEAN;
+
+VAR p:List;
+
+i:CARDINAL;
+
+BEGIN p:=l;
+
+i:=0;
+
+WHILE(p#NIL)AND(i<index)DO p:=p^.next;
+
+INC(i)END;
+
+IF p=NIL THEN RETURN FALSE END;
+
+p^.value:=value;
+
+RETURN TRUE END Set;
+
+PROCEDURE IsEmpty(l:List):BOOLEAN;
+
+BEGIN RETURN l=NIL END IsEmpty;
+
+PROCEDURE Clear(VAR l:List);
+
+VAR p:List;
+
+BEGIN WHILE l#NIL DO p:=l;
+
+l:=l^.next;
+
+DISPOSE(p)END END Clear;
+
+PROCEDURE Reverse(VAR l:List);
+
+VAR prev,cur,nxt:List;
+
+BEGIN prev:=NIL;
+
+cur:=l;
+
+WHILE cur#NIL DO nxt:=cur^.next;
+
+cur^.next:=prev;
+
+prev:=cur;
+
+cur:=nxt END;
+
+l:=prev END Reverse;
+
 END M2List.

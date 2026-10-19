@@ -1,0 +1,18 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2Hex;
+
+EXPORT QUALIFIED Encode, Decode;
+
+PROCEDURE Encode (src: ARRAY OF CHAR;
+ length: CARDINAL;
+ VAR dst: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE Decode (src: ARRAY OF CHAR;
+ VAR dst: ARRAY OF CHAR;
+ VAR written: CARDINAL): BOOLEAN;
+
+END M2Hex.

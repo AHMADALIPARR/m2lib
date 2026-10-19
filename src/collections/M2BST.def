@@ -1,0 +1,39 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2BST;
+
+EXPORT QUALIFIED Tree, Create, Destroy, Insert, Contains, Remove, Minimum, Maximum, Size, InOrder;
+
+TYPE Tree = POINTER TO TreeDesc;
+ TreeDesc = RECORD root: POINTER TO Node;
+ size: CARDINAL END;
+
+PROCEDURE Create (): Tree;
+
+PROCEDURE Destroy (VAR t: Tree);
+
+PROCEDURE Insert (t: Tree;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE Contains (t: Tree;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE Remove (t: Tree;
+ value: CARDINAL): BOOLEAN;
+
+PROCEDURE Minimum (t: Tree;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Maximum (t: Tree;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE Size (t: Tree): CARDINAL;
+
+PROCEDURE InOrder (t: Tree;
+ VAR values: ARRAY OF CARDINAL;
+ VAR count: CARDINAL): BOOLEAN;
+
+END M2BST.

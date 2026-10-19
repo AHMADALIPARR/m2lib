@@ -1,0 +1,16 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2CRC16;
+
+EXPORT QUALIFIED CCITT, Modbus;
+
+PROCEDURE CCITT (data: ARRAY OF CHAR;
+ length: CARDINAL): CARDINAL;
+
+PROCEDURE Modbus (data: ARRAY OF CHAR;
+ length: CARDINAL): CARDINAL;
+
+END M2CRC16.

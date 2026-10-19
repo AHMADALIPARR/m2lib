@@ -11,6 +11,8 @@ FROM NumberIO IMPORT WriteCard;
 
 VAR lastErr: ErrorCode;
 
+    handler: ErrorHandler;
+
 PROCEDURE CopyStr(src: ARRAY OF CHAR;
 
 VAR dst: ARRAY OF CHAR);
@@ -31,11 +33,19 @@ VAR s: ARRAY OF CHAR);
 
 BEGIN CASE code OF Success:CopyStr("Success",s)|ErrGeneric:CopyStr("Generic error",s)|ErrOutOfMemory:CopyStr("Out of memory",s)|ErrInvalidArg:CopyStr("Invalid argument",s)|ErrIndexOutOfBounds:CopyStr("Index out of bounds",s)|ErrNotFound:CopyStr("Not found",s)|ErrAlreadyExists:CopyStr("Already exists",s)|ErrIO:CopyStr("I/O error",s)|ErrOverflow:CopyStr("Overflow",s)|ErrUnderflow:CopyStr("Underflow",s)|ErrDivByZero:CopyStr("Division by zero",s)|ErrDomain:CopyStr("Domain error",s)|ErrRange:CopyStr("Range error",s)|ErrFormat:CopyStr("Format error",s)|ErrEOF:CopyStr("End of file",s)|ErrPermission:CopyStr("Permission denied",s)|ErrNotSupported:CopyStr("Not supported",s)|ErrTimeout:CopyStr("Timeout",s)|ErrBusy:CopyStr("Busy",s)|ErrInterrupted:CopyStr("Interrupted",s)|ErrCorrupt:CopyStr("Corrupt data",s) ELSE CopyStr("Unknown error",s) END END ErrorToString;
 
+PROCEDURE SetHandler(h: ErrorHandler);
+
+BEGIN handler:=h END SetHandler;
+
 PROCEDURE ReportError(code: ErrorCode;
 
 msg: ARRAY OF CHAR);
 
 BEGIN lastErr:=code;
+
+IF handler#NIL THEN handler(code,msg);
+
+RETURN END;
 
 WriteString("M2Lib Error [");
 
@@ -55,4 +65,6 @@ PROCEDURE LastError(): ErrorCode;
 
 BEGIN RETURN lastErr END LastError;
 
-BEGIN lastErr:=Success END M2Errors.
+BEGIN handler:=NIL;
+
+lastErr:=Success END M2Errors.

@@ -1,0 +1,16 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2KMP;
+
+EXPORT QUALIFIED Find, CountMatches;
+
+PROCEDURE Find (text,pattern: ARRAY OF CHAR;
+ startAt: CARDINAL;
+ VAR position: CARDINAL): BOOLEAN;
+
+PROCEDURE CountMatches (text,pattern: ARRAY OF CHAR): CARDINAL;
+
+END M2KMP.

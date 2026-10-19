@@ -6,9 +6,9 @@
 # M2Lib — Modula-2 Library
 
 [![Modula-2](https://img.shields.io/badge/language-Modula--2-blue)](https://en.wikipedia.org/wiki/Modula-2)
-[![Modules](https://img.shields.io/badge/modules-30%20paired-brightgreen)](docs/MODULES.md)
-[![Source lines](https://img.shields.io/badge/source%20lines-2888-brightgreen)](docs/MODULES.md)
-[![Demos](https://img.shields.io/badge/demos-14-blue)](examples/)
+[![Modules](https://img.shields.io/badge/modules-46%20paired-brightgreen)](docs/MODULES.md)
+[![Source lines](https://img.shields.io/badge/source%20lines-5453-brightgreen)](docs/MODULES.md)
+[![Demos](https://img.shields.io/badge/demos-15-blue)](examples/)
 [![Edge cases](https://img.shields.io/badge/edge%20cases-33-blue)](docs/edge-cases.md)
 [![Compiler](https://img.shields.io/badge/gm2-BLOCKED-red)](docs/architecture.md)
 [![License](https://img.shields.io/badge/license-Sovereign--Leviathan--SL--AGPL3--001-blue.svg)](LICENSE)
@@ -30,8 +30,8 @@ with a pinned toolchain.
 
 | Path | Contents |
 |---|---|
-| `src/` | 30 modules, one directory per domain |
-| `examples/` | 14 demos, written not executed |
+| `src/` | 46 modules, one directory per domain |
+| `examples/` | 15 demos, written not executed |
 | `tests/unit/` | Modula-2 tests incl. 33 edge-case checks |
 | `tests/integration/` | Reserved for end-to-end `gm2` runs |
 | `benchmarks/` | Reserved; no numbers claimed |
@@ -43,17 +43,18 @@ with a pinned toolchain.
 | Domain | Modules | Count |
 |---|---|---|
 | Core | M2Assert, M2Errors, M2Limits, M2Version | 4 |
-| Text | M2Chars, M2Strings, M2UTF8 | 3 |
-| Collections | M2BitSet, M2Hash, M2Heap, M2List, M2Queue, M2Stack, M2Vector | 7 |
-| Algorithms | M2Search, M2Sort | 2 |
-| Math | M2Complex, M2Math, M2Matrix, M2Random | 4 |
+| Text | M2Chars, M2Strings, M2UTF8, M2Base64, M2Char, M2Hex, M2Parse, M2Text | 8 |
+| Collections | M2BitSet, M2Hash, M2Heap, M2List, M2Queue, M2Stack, M2Vector, M2BST, M2RingQueue | 9 |
+| Algorithms | M2Search, M2Sort, M2Graph, M2KMP | 4 |
+| Math | M2Complex, M2Math, M2Matrix, M2Random, M2Integer, M2Interpolation, M2Rational, M2Stats | 8 |
 | Formats | M2CSV, M2INI, M2JSON | 3 |
 | I/O | M2Binary, M2Endian | 2 |
 | Filesystem | M2Path | 1 |
 | Time | M2Time | 1 |
 | Network | M2NetFrame | 1 |
-| Security | M2CRC32, M2SHA256 | 2 |
-| **Total** | | **30** |
+| Security | M2CRC32, M2CRC16, M2SHA256 | 3 |
+| System | M2BitOps, M2Date | 2 |
+| **Total** | | **46** |
 
 ```mermaid
 flowchart TB
@@ -61,16 +62,16 @@ flowchart TB
     M2Assert; M2Errors; M2Limits; M2Version
   end
   subgraph text["Text"]
-    M2Chars; M2Strings; M2UTF8
+    M2Chars; M2Strings; M2UTF8; M2Base64; M2Char; M2Hex; M2Parse; M2Text
   end
   subgraph coll["Collections"]
-    M2BitSet; M2Hash; M2Heap; M2List; M2Queue; M2Stack; M2Vector
+    M2BitSet; M2Hash; M2Heap; M2List; M2Queue; M2Stack; M2Vector; M2BST; M2RingQueue
   end
   subgraph algo["Algorithms"]
-    M2Search; M2Sort
+    M2Search; M2Sort; M2Graph; M2KMP
   end
   subgraph math["Math"]
-    M2Complex; M2Math; M2Matrix; M2Random
+    M2Complex; M2Math; M2Matrix; M2Random; M2Integer; M2Interpolation; M2Rational; M2Stats
   end
   subgraph fmt["Formats"]
     M2CSV; M2INI; M2JSON
@@ -78,8 +79,8 @@ flowchart TB
   subgraph io["I/O"]
     M2Binary; M2Endian
   end
-  subgraph sys["Path / Time / Network / Security"]
-    M2Path; M2Time; M2NetFrame; M2CRC32; M2SHA256
+  subgraph sys["Path / Time / Network / Security / System"]
+    M2Path; M2Time; M2NetFrame; M2CRC32; M2CRC16; M2SHA256; M2BitOps; M2Date
   end
 ```
 
@@ -114,6 +115,7 @@ All are written, not executed — `gm2` is unavailable, so no run claim is made.
 | `text_demo.mod` | M2Chars, M2Strings, M2UTF8 |
 | `bits_demo.mod` | M2BitSet, M2Heap, M2Random |
 | `security_demo.mod` | M2CRC32, M2SHA256 (fails closed) |
+| `cherry_pick_demo.mod` | The 16 cherry-picked modules: M2BST, M2Graph, M2KMP, M2Base64, M2Char, M2Hex, M2Parse, M2Text, M2Integer, M2Rational, M2Stats, M2Interpolation, M2CRC16, M2BitOps, M2Date, M2RingQueue |
 
 ## Status
 
@@ -122,8 +124,8 @@ Source files alone are not evidence of compiler success.
 
 | Check | Result |
 |---|---|
-| Pairing | 30 paired; 0 definition-only; 0 implementation-only |
-| Source lines | 2,888 (2,588 pre-header + 300 header lines) |
+| Pairing | 46 paired; 0 definition-only; 0 implementation-only |
+| Source lines | 5,453 (4,993 pre-header + 460 header lines) |
 | Edge-case checks | 33, traced from source, not executed |
 | `gm2` compile | BLOCKED — compiler not installed |
 | Archive pairing | 34 paired (first generation, `archive/`) |
@@ -133,9 +135,10 @@ SHA-256 fails closed rather than returning a fabricated digest until a portable
 
 ## Provenance
 
-This repo holds two divergent generations, kept separate rather than merged:
-see [docs/SOURCES.md](docs/SOURCES.md). The `archive/` tree is the 2026-10-18
-generation; the root tree is the 2026-10-19 "complete" generation, plus
-assistant-added docs, demos, and tests. Both trees carry the Opaque license
-and headers; source content is unchanged apart from headers, the archive's
-two `.txt` build records (now `.md`), and its `LICENSE` swap.
+This repo holds two divergent generations. The 2026-10-18 generation lives in
+`archive/`, and its code that the 2026-10-19 "complete" generation lacked was
+cherry-picked into the main tree (16 whole modules plus unique procedures in
+13 overlapping modules) — see [docs/SOURCES.md](docs/SOURCES.md). Both trees
+carry the Opaque license and headers; source content is unchanged apart from
+headers, the archive's two `.txt` build records (now `.md`), its `LICENSE`
+swap, and the labeled cherry-pick adaptations documented in `SOURCES.md`.

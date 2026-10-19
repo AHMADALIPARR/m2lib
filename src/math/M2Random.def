@@ -5,7 +5,9 @@
 
 DEFINITION MODULE M2Random;
 
-EXPORT QUALIFIED Seed,Next,NextRange,NextReal;
+EXPORT QUALIFIED Seed,Next,NextRange,NextReal,Generator,Bounded,UnitReal;
+
+TYPE Generator = CARDINAL;
 
 PROCEDURE Seed(value:CARDINAL);
 
@@ -14,5 +16,13 @@ PROCEDURE Next():CARDINAL;
 PROCEDURE NextRange(lo,hi:CARDINAL):CARDINAL;
 
 PROCEDURE NextReal():REAL;
+
+PROCEDURE Bounded(VAR state:Generator;
+
+bound:CARDINAL;
+
+VAR value:CARDINAL):BOOLEAN;
+
+PROCEDURE UnitReal(VAR state:Generator):REAL;
 
 END M2Random.

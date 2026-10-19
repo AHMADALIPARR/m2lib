@@ -33,4 +33,38 @@ PROCEDURE NextReal():REAL;
 
 BEGIN RETURN FLOAT(Next())/FLOAT(MAX(CARDINAL))END NextReal;
 
+
+PROCEDURE Step(VAR state:Generator):CARDINAL;
+
+BEGIN state:=state XOR (state*16#9E3779B9);
+
+state:=state XOR (state DIV 16);
+
+state:=state*16#85EBCA6B;
+
+state:=state XOR (state DIV 13);
+
+state:=state*16#C2B2AE35;
+
+state:=state XOR (state DIV 16);
+
+RETURN state END Step;
+
+PROCEDURE Bounded(VAR state:Generator;
+
+bound:CARDINAL;
+
+VAR value:CARDINAL):BOOLEAN;
+
+BEGIN IF bound=0 THEN value:=0;
+
+RETURN FALSE END;
+
+value:=Step(state) MOD bound;
+
+RETURN TRUE END Bounded;
+
+PROCEDURE UnitReal(VAR state:Generator):REAL;
+
+BEGIN RETURN FLOAT(Step(state) MOD 16777216)/16777216.0 END UnitReal;
 BEGIN state:=2463534242 END M2Random.

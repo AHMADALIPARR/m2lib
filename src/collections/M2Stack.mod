@@ -87,4 +87,14 @@ PROCEDURE IsEmpty(s:Stack):BOOLEAN;
 
 BEGIN RETURN s=NIL END IsEmpty;
 
+
+PROCEDURE Clear(VAR s:Stack);
+
+VAR p:Stack;
+
+BEGIN WHILE s#NIL DO p:=s;
+
+s:=s^.next;
+
+DISPOSE(p)END END Clear;
 END M2Stack.

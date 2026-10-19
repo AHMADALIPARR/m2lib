@@ -5,7 +5,7 @@
 
 DEFINITION MODULE M2List;
 
-EXPORT QUALIFIED List,Create,Destroy,Append,Prepend,RemoveFirst,Length,Contains;
+EXPORT QUALIFIED List,Create,Destroy,Append,Prepend,RemoveFirst,Length,Contains,Get,Set,IsEmpty,Clear,Reverse;
 
 TYPE List=POINTER TO Node;
 
@@ -34,5 +34,21 @@ PROCEDURE Length(l:List):CARDINAL;
 PROCEDURE Contains(l:List;
 
 value:CARDINAL):BOOLEAN;
+
+PROCEDURE Get(l:List;
+
+index:CARDINAL;
+
+VAR value:CARDINAL):BOOLEAN;
+
+PROCEDURE Set(l:List;
+
+index,value:CARDINAL):BOOLEAN;
+
+PROCEDURE IsEmpty(l:List):BOOLEAN;
+
+PROCEDURE Clear(VAR l:List);
+
+PROCEDURE Reverse(VAR l:List);
 
 END M2List.

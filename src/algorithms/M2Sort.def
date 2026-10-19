@@ -5,12 +5,18 @@
 
 DEFINITION MODULE M2Sort;
 
-EXPORT QUALIFIED InsertionSort,SelectionSort,HeapSort;
+EXPORT QUALIFIED InsertionSort,SelectionSort,HeapSort,ShellSort,IsSorted;
 
 PROCEDURE InsertionSort(VAR a:ARRAY OF CARDINAL);
 
 PROCEDURE SelectionSort(VAR a:ARRAY OF CARDINAL);
 
 PROCEDURE HeapSort(VAR a:ARRAY OF CARDINAL);
+
+PROCEDURE ShellSort (VAR a: ARRAY OF CARDINAL;
+ n: CARDINAL);
+
+PROCEDURE IsSorted (a: ARRAY OF CARDINAL;
+ n: CARDINAL): BOOLEAN;
 
 END M2Sort.

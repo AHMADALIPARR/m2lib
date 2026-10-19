@@ -5,7 +5,7 @@
 
 DEFINITION MODULE M2Stack;
 
-EXPORT QUALIFIED Stack,Create,Destroy,Push,Pop,Peek,Size,IsEmpty;
+EXPORT QUALIFIED Stack,Create,Destroy,Push,Pop,Peek,Size,IsEmpty,Clear;
 
 TYPE Stack=POINTER TO Node;
 
@@ -32,5 +32,7 @@ VAR v:CARDINAL):BOOLEAN;
 PROCEDURE Size(s:Stack):CARDINAL;
 
 PROCEDURE IsEmpty(s:Stack):BOOLEAN;
+
+PROCEDURE Clear(VAR s:Stack);
 
 END M2Stack.

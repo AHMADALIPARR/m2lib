@@ -1,0 +1,24 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2Date;
+
+EXPORT QUALIFIED Date, IsLeapYear, DaysInMonth, Valid, DayOfYear, Weekday;
+
+TYPE Date = RECORD year,month,day: CARDINAL END;
+
+PROCEDURE IsLeapYear (year: CARDINAL): BOOLEAN;
+
+PROCEDURE DaysInMonth (year,month: CARDINAL): CARDINAL;
+
+PROCEDURE Valid (d: Date): BOOLEAN;
+
+PROCEDURE DayOfYear (d: Date;
+ VAR day: CARDINAL): BOOLEAN;
+
+PROCEDURE Weekday (d: Date;
+ VAR weekday: CARDINAL): BOOLEAN;
+
+END M2Date.

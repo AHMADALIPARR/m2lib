@@ -87,4 +87,28 @@ DEC(last);
 
 Sift(a,0,last)END END HeapSort;
 
+
+PROCEDURE ShellSort (VAR a: ARRAY OF CARDINAL;
+ n: CARDINAL);
+
+VAR gap,i,j,t: CARDINAL;
+
+BEGIN IF n>HIGH(a)+1 THEN n:=HIGH(a)+1 END;
+ gap:=n DIV 2;
+ WHILE gap>0 DO FOR i:=gap TO n-1 DO t:=a[i];
+ j:=i;
+ WHILE (j>=gap) AND (a[j-gap]>t) DO a[j]:=a[j-gap];
+ DEC(j,gap) END;
+ a[j]:=t END;
+ gap:=gap DIV 2 END END ShellSort;
+
+PROCEDURE IsSorted (a: ARRAY OF CARDINAL;
+ n: CARDINAL): BOOLEAN;
+
+VAR i: CARDINAL;
+
+BEGIN IF n>HIGH(a)+1 THEN RETURN FALSE END;
+ IF n<2 THEN RETURN TRUE END;
+ FOR i:=1 TO n-1 DO IF a[i]<a[i-1] THEN RETURN FALSE END END;
+ RETURN TRUE END IsSorted;
 END M2Sort.

@@ -5,7 +5,7 @@
 
 DEFINITION MODULE M2Matrix;
 
-EXPORT QUALIFIED Matrix2,Make2,Add2,Multiply2,Determinant2,Apply2;
+EXPORT QUALIFIED Matrix2,Make2,Add2,Multiply2,Determinant2,Apply2,Multiply,Transpose,Identity,Determinant,Solve;
 
 TYPE Matrix2=RECORD a11,a12,a21,a22:REAL END;
 
@@ -22,5 +22,24 @@ PROCEDURE Apply2(a:Matrix2;
 x,y:REAL;
 
 VAR ox,oy:REAL);
+
+PROCEDURE Multiply (a,b: ARRAY OF REAL;
+ rowsA,colsA,colsB: CARDINAL;
+ VAR result: ARRAY OF REAL): BOOLEAN;
+
+PROCEDURE Transpose (a: ARRAY OF REAL;
+ rows,cols: CARDINAL;
+ VAR result: ARRAY OF REAL): BOOLEAN;
+
+PROCEDURE Identity (n: CARDINAL;
+ VAR result: ARRAY OF REAL): BOOLEAN;
+
+PROCEDURE Determinant (a: ARRAY OF REAL;
+ n: CARDINAL;
+ VAR value: REAL): BOOLEAN;
+
+PROCEDURE Solve (a,b: ARRAY OF REAL;
+ n: CARDINAL;
+ VAR x: ARRAY OF REAL): BOOLEAN;
 
 END M2Matrix.

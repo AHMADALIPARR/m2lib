@@ -1,0 +1,22 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2Parse;
+
+EXPORT QUALIFIED ParseCardinal, ParseInteger, ParseHex, ParseBoolean;
+
+PROCEDURE ParseCardinal (s: ARRAY OF CHAR;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE ParseInteger (s: ARRAY OF CHAR;
+ VAR value: INTEGER): BOOLEAN;
+
+PROCEDURE ParseHex (s: ARRAY OF CHAR;
+ VAR value: CARDINAL): BOOLEAN;
+
+PROCEDURE ParseBoolean (s: ARRAY OF CHAR;
+ VAR value: BOOLEAN): BOOLEAN;
+
+END M2Parse.

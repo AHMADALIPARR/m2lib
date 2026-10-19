@@ -5,7 +5,7 @@
 
 DEFINITION MODULE M2UTF8;
 
-EXPORT QUALIFIED IsValid,DecodeRune,CountRunes;
+EXPORT QUALIFIED IsValid,DecodeRune,CountRunes,Validate,CountCodePoints,DecodeOne;
 
 PROCEDURE IsValid(s:ARRAY OF CHAR):BOOLEAN;
 
@@ -18,5 +18,17 @@ VAR rune,width:CARDINAL):BOOLEAN;
 PROCEDURE CountRunes(s:ARRAY OF CHAR;
 
 VAR count:CARDINAL):BOOLEAN;
+
+PROCEDURE Validate (data: ARRAY OF CHAR;
+ length: CARDINAL;
+ VAR badOffset: CARDINAL): BOOLEAN;
+
+PROCEDURE CountCodePoints (data: ARRAY OF CHAR;
+ length: CARDINAL;
+ VAR count: CARDINAL): BOOLEAN;
+
+PROCEDURE DecodeOne (data: ARRAY OF CHAR;
+ length, offset: CARDINAL;
+ VAR codePoint, nextOffset: CARDINAL): BOOLEAN;
 
 END M2UTF8.

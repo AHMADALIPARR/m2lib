@@ -1,0 +1,24 @@
+(* SPDX-License-Identifier: LicenseRef-Sovereign-Leviathan-SL-AGPL3-001 *)
+(* Copyright (c) 2026 Ahmad Ali Parr. All rights reserved. *)
+(* Authored by Ahmad Ali Parr. *)
+(* Licensed under the SNAPKITTY OPAQUE SOURCE LICENSE v1.0. See LICENSE. *)
+
+DEFINITION MODULE M2BitOps;
+
+EXPORT QUALIFIED Test, Set, Clear, Toggle, Count, LeadingZeros, RotateLeft;
+
+PROCEDURE Test (value, bit: CARDINAL): BOOLEAN;
+
+PROCEDURE Set (value, bit: CARDINAL): CARDINAL;
+
+PROCEDURE Clear (value, bit: CARDINAL): CARDINAL;
+
+PROCEDURE Toggle (value, bit: CARDINAL): CARDINAL;
+
+PROCEDURE Count (value: CARDINAL): CARDINAL;
+
+PROCEDURE LeadingZeros (value: CARDINAL): CARDINAL;
+
+PROCEDURE RotateLeft (value, amount: CARDINAL): CARDINAL;
+
+END M2BitOps.

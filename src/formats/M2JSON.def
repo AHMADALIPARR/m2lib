@@ -5,12 +5,17 @@
 
 DEFINITION MODULE M2JSON;
 
-EXPORT QUALIFIED EscapeString,IsWhitespace;
+EXPORT QUALIFIED EscapeString,IsWhitespace,UnescapeString,IsNumber;
 
 PROCEDURE EscapeString(src:ARRAY OF CHAR;
 
 VAR dst:ARRAY OF CHAR):BOOLEAN;
 
 PROCEDURE IsWhitespace(c:CHAR):BOOLEAN;
+
+PROCEDURE UnescapeString (source: ARRAY OF CHAR;
+ VAR destination: ARRAY OF CHAR): BOOLEAN;
+
+PROCEDURE IsNumber (source: ARRAY OF CHAR): BOOLEAN;
 
 END M2JSON.
